@@ -1,0 +1,9 @@
+.loading-map {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  height: 100vh;
+  position: fixed;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+}
