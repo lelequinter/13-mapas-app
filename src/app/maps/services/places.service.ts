@@ -38,6 +38,11 @@ export class PlacesService {
 
   getPlacesByQuery(query: string = '') {
     //todo: evaluar cuando query es un string vacio
+    if (query.length === 0) {
+      this.places = [];
+      this.isLoadingPlaces = false;
+      return
+    }
 
     if (!this.userLocation) throw Error('No hay user location');
 
@@ -49,7 +54,7 @@ export class PlacesService {
       }
     })
       .subscribe(res => {
-        console.log(res.features);
+        // console.log(res.features);
         this.isLoadingPlaces = false;
         this.places = res.features;
 
